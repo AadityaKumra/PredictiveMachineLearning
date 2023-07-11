@@ -25,20 +25,24 @@ What is the objective of this project?
 
 <h1> Dataset Description </h1>
 
-- <u>**Telemetry Time Series Data:**</u> It consists of hourly average of voltage, rotation, pressure, vibration collected from 100 machines for the year 2015 and has 8,76,099 rows.
+1. <u>**Telemetry Time Series Data:**</u> It consists of hourly average of voltage, rotation, pressure, vibration collected from 100 machines for the year 2015 and has 8,76,099 rows.
 Metadata of Machines: it contains  Model type & age of the Machines.
-Failures: Each record represents replacement of a component due to failure. This data is a subset of Maintenance data. This data is rounded to the closest hour since the telemetry data is collected at an hourly rate. 
 
-- <u>**Errors:**</u> These are errors encountered by the machines while in operating condition. Since, these errors don't shut down the machines, these are not considered as failures. The error date and times are rounded to the closest hour since the telemetry data is collected at an hourly rate. 
+2. <u>**Failures:**</u> Each record represents replacement of a component due to failure. This data is a subset of Maintenance data. This data is rounded to the closest hour since the telemetry data is collected at an hourly rate. 
 
-- <u>**Maintenance:**</u> If a component of a machine is replaced.  Components are replaced under two situations:
+3. <u>**Errors:**</u> These are errors encountered by the machines while in operating condition. Since, these errors don't shut down the machines, these are not considered as failures. The error date and times are rounded to the closest hour since the telemetry data is collected at an hourly rate. 
+
+4.  <u>**Maintenance:**</u> If a component of a machine is replaced.  Components are replaced under two situations:
 
 	1. During the regular scheduled visit, the technician replaced it (Proactive Maintenance). 
 
 	2. A component breaks down and then the technician does an unscheduled maintenance to replace the component (Reactive Maintenance). This is considered as a failure and corresponding data is captured under Failures.
 
     Maintenance data has both 2014 and 2015 records. This data is rounded to the closest hour since the telemetry data is collected at an hourly rate. 
-- <U>**Metadata of Machines:**</U> Model type & age of the Machines.
+5. <U>**Metadata of Machines:**</U> Model type & age of the Machines.
+
+
+>Telemetry Data Insights
 
 1. Pressure: The highest recorded pressure is 185.95 units and The lowest recorded pressure is 51.24 units this indicates a significant range in pressure values over the given time period. It suggests that the machine experienced both high and low pressure conditions during its operation.
 
