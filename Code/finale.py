@@ -781,7 +781,7 @@ def page2():
 
         plt.figure(figsize=(10,8))
 
-        sns.heatmap(mer.corr())
+        # sns.heatmap(mer.corr())
 
         # st.subheader('Correlation matrix')
         # st.write("After merging the following files, this is the correlation matrix for Telemetry, Errors and Machines dataset")
