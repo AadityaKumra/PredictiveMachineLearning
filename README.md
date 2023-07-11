@@ -1,5 +1,18 @@
 <a href="#" class="button"> <h1>**Predictive Maintenance**</h1> ([Deployed Project Link](https://aadityakumra-predictivemaintenance.streamlit.app/))</a>
-> Analyzing historic data, this project aims to leverage ML and Data Visualization skills to visualize and analyze trends and relationship between various factors that affect the performance of a machine. With large and diverse data samples, Microsoft Azure Predictive Maintenance dataset allows for robust model training and evaluation.
+
+<u><h2>Project Overview</h2></u>
+
+- Analyzing historic data, this project aims to leverage ML and Data Visualization skills to visualize and analyze trends and relationship between various factors that affect the performance of a machine. With large and diverse data samples, Microsoft Azure Predictive Maintenance dataset allows for robust model training and evaluation.
+ 
+ - With Dynamic front-end to see visualizations and draw insights from individual machine dataset for different parameters on user-input.
+   
+ - Failure prediction using SVM, Random Forest, Logistic Regression, CATBOOST models with best accuracy of 98.07%.
+   
+ - Dynamically enter the input features (Pressure, Voltage, Rotation, Temperature) to test whether machine will fail or not.
+
+![image](https://github.com/AadityaKumra/PredictiveMaintenance/assets/72290209/540b6803-afd7-4da4-b4c9-8b1204bdff4f)
+![image](https://github.com/AadityaKumra/PredictiveMaintenance/assets/72290209/da60abf4-cd0f-4e71-a559-9d69a6d93aac)
+
 
 ```diff 
 What is the issue that industries are facing and how our project aims to provide solutions for them?
