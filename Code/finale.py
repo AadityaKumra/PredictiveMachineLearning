@@ -40,11 +40,11 @@ def page1():
     st.title(":blue[DATA COLLECTION AND PRE-PROCESSING]")
     # st.write("Welcome to Page 1")
     def main():
-        df = pd.read_csv("C:/Users/Asus/Documents/GitHub/PredictiveMaintenance/Datasets/PdM_telemetry.csv")
-        df1 = pd.read_csv("C:/Users/Asus/Documents/GitHub/PredictiveMaintenance/Datasets/PdM_machines.csv")
-        df2 = pd.read_csv("C:/Users/Asus/Documents/GitHub/PredictiveMaintenance/Datasets/PdM_failures.csv")
-        df3 = pd.read_csv("C:/Users/Asus/Documents/GitHub/PredictiveMaintenance/Datasets/PdM_errors.csv")
-        df4 = pd.read_csv("C:/Users/Asus/Documents/GitHub/PredictiveMaintenance/Datasets/PdM_maint.csv")
+        df = pd.read_csv("Datasets/PdM_telemetry.csv")
+        df1 = pd.read_csv("Datasets/PdM_machines.csv")
+        df2 = pd.read_csv("Datasets/PdM_failures.csv")
+        df3 = pd.read_csv("Datasets/PdM_errors.csv")
+        df4 = pd.read_csv("Datasets/PdM_maint.csv")
         
         # Display the Telemetry Data
         st.subheader("Telemetry Data")
@@ -99,7 +99,7 @@ def page1():
 ################################################
         # Load the dataset
 
-        tele = pd.read_csv("C:/Users/Asus/Documents/GitHub/PredictiveMaintenance/Datasets/PdM_telemetry.csv")
+        tele = pd.read_csv("Datasets/PdM_telemetry.csv")
 
         # Display the dataset in the app
 
@@ -503,8 +503,8 @@ def page2():
     def main():
     
 
-        merged_df = pd.read_csv("C:/Users/Asus/Documents/GitHub/PredictiveMaintenance/Datasets/PdM_failures.csv")
-        df1 = pd.read_csv("C:/Users/Asus/Documents/GitHub/PredictiveMaintenance/Datasets/PdM_machines.csv")
+        merged_df = pd.read_csv("Datasets/PdM_failures.csv")
+        df1 = pd.read_csv("Datasets/PdM_machines.csv")
         merged_df['datetime'] = pd.to_datetime(merged_df['datetime'])
 
         merged_df['failure'] = merged_df['failure'].astype(str)
@@ -608,7 +608,7 @@ def page2():
         ##################################
         
 
-        df = pd.read_csv("C:/Users/Asus/Documents/GitHub/PredictiveMaintenance/Datasets/PdM_errors.csv")
+        df = pd.read_csv("Datasets/PdM_errors.csv")
 
         # Display the dataframe and its information
         # st.subheader("Dataset")
@@ -759,17 +759,17 @@ def page2():
         # st.table(tab1)
 
     
-        df1 = pd.read_csv("C:/Users/Asus/Documents/GitHub/PredictiveMaintenance/Datasets/PdM_machines.csv")
+        df1 = pd.read_csv("Datasets/PdM_machines.csv")
 
         df2=pd.merge(df,df1) #machines and failure
 
         # st.write(df2)
 
-        df3= pd.read_csv("C:/Users/Asus/Documents/GitHub/PredictiveMaintenance/Datasets/PdM_maint.csv")
+        df3= pd.read_csv("Datasets/PdM_maint.csv")
 
         # st.write(df3) #maintenance
 
-        df4= pd.read_csv("C:/Users/Asus/Documents/GitHub/PredictiveMaintenance/Datasets/PdM_telemetry.csv")
+        df4= pd.read_csv("Datasets/PdM_telemetry.csv")
 
         df4['datetime']=pd.to_datetime(df4['datetime'])
 
@@ -934,11 +934,11 @@ def page3():
 
         ## MACHINES DATASET
     def main():
-        df1 = pd.read_csv("C:/Users/Asus/Documents/GitHub/PredictiveMaintenance/Datasets/PdM_machines.csv")
+        df1 = pd.read_csv("Datasets/PdM_machines.csv")
         # st.header("MACHINES DATASET")
 
         # Read the CSV files
-        df = pd.read_csv("C:/Users/Asus/Documents/GitHub/PredictiveMaintenance/Datasets/PdM_telemetry.csv")
+        df = pd.read_csv("Datasets/PdM_telemetry.csv")
 
         # Convert 'datetime' column to datetime type
         df['datetime'] = pd.to_datetime(df['datetime'])
@@ -1019,11 +1019,11 @@ def page3():
 
         # Load the telemetry, failures, and additional dataset
 
-        df = pd.read_csv("C:/Users/Asus/Documents/GitHub/PredictiveMaintenance/Datasets/PdM_telemetry.csv")
+        df = pd.read_csv("Datasets/PdM_telemetry.csv")
 
-        df2 = pd.read_csv("C:/Users/Asus/Documents/GitHub/PredictiveMaintenance/Datasets/PdM_failures.csv")
+        df2 = pd.read_csv("Datasets/PdM_failures.csv")
 
-        df1 = pd.read_csv("C:/Users/Asus/Documents/GitHub/PredictiveMaintenance/Datasets/PdM_machines.csv")
+        df1 = pd.read_csv("Datasets/PdM_machines.csv")
 
 
         df3 = pd.merge(df, df2, how='outer')
@@ -1087,8 +1087,8 @@ def page4():
     def main():
         # st.title("")
         st.title("MODEL BUILDING")
-        df = pd.read_csv("C:/Users/Asus/Documents/GitHub/PredictiveMaintenance/Datasets/PdM_telemetry.csv")
-        df5= pd.read_csv("C:/Users/Asus/Documents/GitHub/PredictiveMaintenance/Datasets/PdM_failures.csv")
+        df = pd.read_csv("Datasets/PdM_telemetry.csv")
+        df5= pd.read_csv("Datasets/PdM_failures.csv")
         df['datetime'] = pd.to_datetime(df['datetime'])
 
         # Group by machineID and daily frequency, and calculate the daily averages
@@ -1320,9 +1320,9 @@ def page5():
     def main():
         # st.title("")
         # st.title("FAILURE PREDICTION")
-        # df = pd.read_csv("C:/Users/Asus/Documents/GitHub/PredictiveMaintenance/Datasets/PdM_telemetry.csv")
-        # df5= pd.read_csv("C:/Users/Asus/Documents/GitHub/PredictiveMaintenance/Datasets/PdM_failures.csv")
-        # # df1= pd.read_csv("C:/Users/Asus/Documents/GitHub/PredictiveMaintenance/Datasets/PdM_machines.csv")
+        # df = pd.read_csv("Datasets/PdM_telemetry.csv")
+        # df5= pd.read_csv("Datasets/PdM_failures.csv")
+        # # df1= pd.read_csv("Datasets/PdM_machines.csv")
         # df['datetime'] = pd.to_datetime(df['datetime'])
         # telemetry_daily = df.groupby(['machineID', pd.Grouper(key='datetime', freq='D')]).sum().reset_index()
 
@@ -1377,8 +1377,8 @@ def page5():
         # merged_df.set_index('datetime', inplace=True)
 
         st.title("FAILURE PREDICTION")
-        df = pd.read_csv("C:/Users/Asus/Documents/GitHub/PredictiveMaintenance/Datasets/PdM_telemetry.csv")
-        df5= pd.read_csv("C:/Users/Asus/Documents/GitHub/PredictiveMaintenance/Datasets/PdM_failures.csv")
+        df = pd.read_csv("Datasets/PdM_telemetry.csv")
+        df5= pd.read_csv("Datasets/PdM_failures.csv")
         df['datetime'] = pd.to_datetime(df['datetime'])
 
         # Group by machineID and daily frequency, and calculate the daily averages
