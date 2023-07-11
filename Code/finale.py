@@ -226,7 +226,7 @@ def page1():
 
         st.subheader("Variation of Telemetry attributes wrt Machine ID")
 
-        mean_pressure_by_machine = telemetry_daily.groupby('machineID')['pressure', 'rotate', 'vibration', 'volt'].mean()
+        mean_pressure_by_machine = telemetry_daily.groupby('machineID')[['pressure', 'rotate', 'vibration', 'volt']].mean()
 
         st.write(mean_pressure_by_machine) 
         
