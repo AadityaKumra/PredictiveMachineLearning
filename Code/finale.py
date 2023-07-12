@@ -1161,6 +1161,8 @@ def page4():
 
         # Create a Random Forest classifier
         rf_classifier = RandomForestClassifier(n_estimators=50, random_state=42, class_weight='balanced')
+       
+
 
         # Train the classifier
         rf_classifier.fit(X_train, y_train)
@@ -1440,8 +1442,8 @@ def page5():
         X = merged_df[['pressure', 'vibration', 'rotate', 'volt']]
         y = merged_df['failure']
 
-        model = CatBoostClassifier()
-        model.fit(X, y)
+        # model = CatBoostClassifier()
+        # model.fit(X, y)
 
         failed_records = merged_df[merged_df['failure'] == 1]
 
