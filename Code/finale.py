@@ -1216,85 +1216,85 @@ def page4():
         st.write('Training Accuracy:', train_accuracy)
         st.write('Testing Accuracy:', test_accuracy)
 
-        ## LOGISTIC REGRESSION - NEWTON CG 
-        # st.divider()
-        # st.header('Logistic Regression - netwon-cg solver')
-        # lr = LogisticRegression(solver='newton-cg', class_weight='balanced')
-        # lr.fit(X_train, y_train)
+        #LOGISTIC REGRESSION - NEWTON CG 
+        st.divider()
+        st.header('Logistic Regression - netwon-cg solver')
+        lr = LogisticRegression(solver='newton-cg', class_weight='balanced')
+        lr.fit(X_train, y_train)
 
-        # X = merged_df.drop('failure', axis=1)  
-        # y = merged_df['failure']
+        X = merged_df.drop('failure', axis=1)  
+        y = merged_df['failure']
 
-        # pred_test = lr.predict(X_test)
+        pred_test = lr.predict(X_test)
 
-        # st.write("Accuracy Score " , accuracy_score(y_test,pred_test))
-        # st.write("Confusion Matrix:",confusion_matrix(y_test, pred_test))
+        st.write("Accuracy Score " , accuracy_score(y_test,pred_test))
+        st.write("Confusion Matrix:",confusion_matrix(y_test, pred_test))
 
-        # #train accuracy 
-        # y_train_pred = lr.predict(X_train)
-        # train_accuracy = accuracy_score(y_train, y_train_pred)
-        # st.write("Train Accuracy:", train_accuracy)
+        #train accuracy 
+        y_train_pred = lr.predict(X_train)
+        train_accuracy = accuracy_score(y_train, y_train_pred)
+        st.write("Train Accuracy:", train_accuracy)
 
-        # #test accuracy
-        # y_test_pred = lr.predict(X_test)
-        # test_accuracy = accuracy_score(y_test, y_test_pred)
-        # st.write("Test Accuracy:", test_accuracy)
+        #test accuracy
+        y_test_pred = lr.predict(X_test)
+        test_accuracy = accuracy_score(y_test, y_test_pred)
+        st.write("Test Accuracy:", test_accuracy)
 
-        ## LOGISTIC REGRESSION - SAGA 
+        # LOGISTIC REGRESSION - SAGA 
 
-        # # st.divider()
-        # # st.header('Logistic Regression - saga solver')
-        # lr = LogisticRegression(solver='saga', class_weight='balanced')
-        # lr.fit(X_train, y_train)
+        st.divider()
+        st.header('Logistic Regression - saga solver')
+        lr = LogisticRegression(solver='saga', class_weight='balanced')
+        lr.fit(X_train, y_train)
 
-        # X = merged_df.drop('failure', axis=1)  
-        # y = merged_df['failure']
+        X = merged_df.drop('failure', axis=1)  
+        y = merged_df['failure']
 
-        # pred_test = lr.predict(X_test)
+        pred_test = lr.predict(X_test)
 
-        # # st.write("Accuracy Score " , accuracy_score(y_test,pred_test))
-        # # st.write("Confusion Matrix:",confusion_matrix(y_test, pred_test))
+        st.write("Accuracy Score " , accuracy_score(y_test,pred_test))
+        st.write("Confusion Matrix:",confusion_matrix(y_test, pred_test))
 
-        # #train accuracy 
-        # y_train_pred = lr.predict(X_train)
-        # train_accuracy = accuracy_score(y_train, y_train_pred)
-        # # st.write("Train Accuracy:", train_accuracy)
+        #train accuracy 
+        y_train_pred = lr.predict(X_train)
+        train_accuracy = accuracy_score(y_train, y_train_pred)
+        st.write("Train Accuracy:", train_accuracy)
 
-        # #test accuracy
-        # y_test_pred = lr.predict(X_test)
-        # test_accuracy = accuracy_score(y_test, y_test_pred)
-        # # st.write("Test Accuracy:", test_accuracy)
+        #test accuracy
+        y_test_pred = lr.predict(X_test)
+        test_accuracy = accuracy_score(y_test, y_test_pred)
+        st.write("Test Accuracy:", test_accuracy)
 
         # #CATBOOST
-        # st.divider()
-        # st.header("CatBoost Classifier")
-        # X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.5)
+        st.divider()
+        st.header("CatBoost Classifier")
+        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.5)
 
-        # class_counts = y_train.value_counts()
-        # class_weights = class_counts.sum() / (len(class_counts) * class_counts)
+        class_counts = y_train.value_counts()
+        class_weights = class_counts.sum() / (len(class_counts) * class_counts)
 
-        # # Create a CatBoost classifier
-        # catboost_model = cb.CatBoostClassifier(iterations=100,
-        #                                     random_state=42,
-        #                                     eval_metric='Accuracy',
-        #                                     task_type='CPU',
-        #                                     verbose=50,
-        #                                     class_weights=class_weights)
+        # Create a CatBoost classifier
+        catboost_model = cb.CatBoostClassifier(iterations=100,
+                                            random_state=42,
+                                            eval_metric='Accuracy',
+                                            task_type='CPU',
+                                            verbose=50,
+                                            class_weights=class_weights)
 
-        # catboost_model.fit(X_train, y_train, eval_set=(X_test, y_test), early_stopping_rounds=50)
-        # y_pred = catboost_model.predict(X_test)
-        # pred_test = catboost_model.predict(X_test)
+        catboost_model.fit(X_train, y_train, eval_set=(X_test, y_test), early_stopping_rounds=50)
+        y_pred = catboost_model.predict(X_test)
+        pred_test = catboost_model.predict(X_test)
 
-        # # Calculate accuracy
-        # accuracy = accuracy_score(y_test, pred_test)
+        # Calculate accuracy
+        accuracy = accuracy_score(y_test, pred_test)
 
-        # # Calculate confusion matrix
-        # cm = confusion_matrix(y_test, y_pred)
+        # Calculate confusion matrix
+        cm = confusion_matrix(y_test, y_pred)
 
-        # # Display the results
-        # st.write("Accuracy:", accuracy)
-        # st.write("Confusion Matrix:")
-        # st.write(cm)
+        # Display the results
+        st.write("Accuracy:", accuracy)
+        st.write("Confusion Matrix:")
+        st.write(cm)
 
         
         # # st.write('CatBoost training')
