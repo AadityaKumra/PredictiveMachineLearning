@@ -1181,12 +1181,12 @@ def page4():
         # Calculate and st.write train accuracy
         y_train_pred = rf_classifier.predict(X_train)
         train_accuracy = accuracy_score(y_train, y_train_pred)
-        st.write("Train Accuracy:", train_accuracy)
+        # st.write("Train Accuracy:", train_accuracy)
 
         # Calculate and st.write test accuracy
         y_test_pred = rf_classifier.predict(X_test)
-        test_accuracy = accuracy_score(y_test, y_test_pred)
-        st.write("Test Accuracy:", test_accuracy)
+        # test_accuracy = accuracy_score(y_test, y_test_pred)
+        # st.write("Test Accuracy:", test_accuracy)
 
         X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=0)
 
@@ -1213,8 +1213,8 @@ def page4():
         st.write('Accuracy:', accuracy)
         #st.write('Confusion Matrix:')
         #st.write(cm)
-        st.write('Training Accuracy:', train_accuracy)
-        st.write('Testing Accuracy:', test_accuracy)
+        # st.write('Training Accuracy:', train_accuracy)
+        # st.write('Testing Accuracy:', test_accuracy)
 
         #LOGISTIC REGRESSION - NEWTON CG 
         st.divider()
@@ -1228,17 +1228,17 @@ def page4():
         pred_test = lr.predict(X_test)
 
         st.write("Accuracy Score " , accuracy_score(y_test,pred_test))
-        st.write("Confusion Matrix:",confusion_matrix(y_test, pred_test))
+        # st.write("Confusion Matrix:",confusion_matrix(y_test, pred_test))
 
         #train accuracy 
         y_train_pred = lr.predict(X_train)
         train_accuracy = accuracy_score(y_train, y_train_pred)
-        st.write("Train Accuracy:", train_accuracy)
+        # st.write("Train Accuracy:", train_accuracy)
 
         #test accuracy
         y_test_pred = lr.predict(X_test)
         test_accuracy = accuracy_score(y_test, y_test_pred)
-        st.write("Test Accuracy:", test_accuracy)
+        # st.write("Test Accuracy:", test_accuracy)
 
         # LOGISTIC REGRESSION - SAGA 
 
@@ -1253,17 +1253,17 @@ def page4():
         pred_test = lr.predict(X_test)
 
         st.write("Accuracy Score " , accuracy_score(y_test,pred_test))
-        st.write("Confusion Matrix:",confusion_matrix(y_test, pred_test))
+        # st.write("Confusion Matrix:",confusion_matrix(y_test, pred_test))
 
         #train accuracy 
         y_train_pred = lr.predict(X_train)
         train_accuracy = accuracy_score(y_train, y_train_pred)
-        st.write("Train Accuracy:", train_accuracy)
+        # st.write("Train Accuracy:", train_accuracy)
 
         #test accuracy
         y_test_pred = lr.predict(X_test)
         test_accuracy = accuracy_score(y_test, y_test_pred)
-        st.write("Test Accuracy:", test_accuracy)
+        # st.write("Test Accuracy:", test_accuracy)
 
         # #CATBOOST
         st.divider()
