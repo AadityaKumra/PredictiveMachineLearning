@@ -1176,7 +1176,7 @@ def page4():
 
         # Calculate and st.write confusion matrix
         cm = confusion_matrix(y_test, y_pred)
-        st.write("Confusion Matrix:", cm)
+        #st.write("Confusion Matrix:", cm)
 
         # Calculate and st.write train accuracy
         y_train_pred = rf_classifier.predict(X_train)
@@ -1211,8 +1211,8 @@ def page4():
         # Display the results using Streamlit
         st.header('Support Vector Classifier')
         st.write('Accuracy:', accuracy)
-        st.write('Confusion Matrix:')
-        st.write(cm)
+        #st.write('Confusion Matrix:')
+        #st.write(cm)
         st.write('Training Accuracy:', train_accuracy)
         st.write('Testing Accuracy:', test_accuracy)
 
@@ -1293,8 +1293,8 @@ def page4():
 
         # Display the results
         st.write("Accuracy:", accuracy)
-        st.write("Confusion Matrix:")
-        st.write(cm)
+        # st.write("Confusion Matrix:")
+        # st.write(cm)
 
         
         # # st.write('CatBoost training')
