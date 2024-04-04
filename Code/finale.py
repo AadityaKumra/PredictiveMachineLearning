@@ -1320,194 +1320,194 @@ def page4():
 
 def page5():
     def main():
-        # st.title("")
+        # # st.title("")
+        # # st.title("FAILURE PREDICTION")
+        # # df = pd.read_csv("Datasets/PdM_telemetry.csv")
+        # # df5= pd.read_csv("Datasets/PdM_failures.csv")
+        # # # df1= pd.read_csv("Datasets/PdM_machines.csv")
+        # # df['datetime'] = pd.to_datetime(df['datetime'])
+        # # telemetry_daily = df.groupby(['machineID', pd.Grouper(key='datetime', freq='D')]).sum().reset_index()
+
+        # # telemetry_daily['pressure'] = telemetry_daily['pressure'] / 24
+        # # telemetry_daily['volt'] = telemetry_daily['volt'] / 24
+        # # telemetry_daily['vibration'] = telemetry_daily['vibration'] / 24
+        # # telemetry_daily['rotate'] = telemetry_daily['rotate'] / 24
+
+        # # telemetry_daily = telemetry_daily.dropna()
+
+        # # # print(telemetry_daily.shape)
+        # # # print(telemetry_daily.head())
+        # # df5['failure']= df5['failure'].replace('comp1',1)
+        # # df5['failure']= df5['failure'].replace('comp2',1)
+        # # df5['failure']= df5['failure'].replace('comp3',1)
+        # # df5['failure']= df5['failure'].replace('comp4',1)
+
+        # # df5['failure']=df5['failure'].astype(str)
+        # # # print(df5['failure'])
+
+        # # merged_df = pd.merge(telemetry_daily, df5, on=['machineID', 'datetime'], how='left')
+
+        # # # Display the merged DataFrame
+        # # st.write("Merged DataFrame:")
+        # # st.dataframe(merged_df)
+
+        # # # merged_df = pd.merge(telemetry_daily, df5, on=['machineID', 'datetime'], how='left')
+
+        # # # print(merged_df.shape)
+        # # # print(merged_df.head())
+
+        # # merged_df['failure']=merged_df['failure'].astype(str)
+        # # # print(merged_df['failure'])
+
+        # # merged_df['failure']= merged_df['failure'].replace('comp1',1)
+        # # merged_df['failure']= merged_df['failure'].replace('comp2',1)
+        # # merged_df['failure']= merged_df['failure'].replace('comp3',1)
+        # # merged_df['failure']= merged_df['failure'].replace('comp4',1)
+        # # merged_df['failure']= merged_df['failure'].replace('comp2comp4',1)
+        # # merged_df['failure']= merged_df['failure'].replace('comp2comp3',1)
+        # # merged_df['failure']= merged_df['failure'].replace('comp1comp2',1)
+        # # merged_df['failure']= merged_df['failure'].replace('comp1comp4',1)
+        # # merged_df['failure']= merged_df['failure'].replace('comp1comp3',1)
+        # # merged_df['failure']= merged_df['failure'].replace('comp3comp4',1)
+        # # merged_df['failure']= merged_df['failure'].replace('1',1)
+        # # merged_df['failure']= merged_df['failure'].replace('nan',0)
+        # # merged_df['failure']= merged_df['failure'].replace('11',1)
+
+        # # # merged_df['datetime']=merged_df['datetime'].astype(str)
+        # # # print(merged_df)
+        # # merged_df['datetime']= pd.to_datetime(merged_df['datetime'])
+        # # merged_df.set_index('datetime', inplace=True)
+
         # st.title("FAILURE PREDICTION")
         # df = pd.read_csv("Datasets/PdM_telemetry.csv")
         # df5= pd.read_csv("Datasets/PdM_failures.csv")
-        # # df1= pd.read_csv("Datasets/PdM_machines.csv")
         # df['datetime'] = pd.to_datetime(df['datetime'])
-        # telemetry_daily = df.groupby(['machineID', pd.Grouper(key='datetime', freq='D')]).sum().reset_index()
 
+        # # Group by machineID and daily frequency, and calculate the daily averages
+        # telemetry_daily = df.groupby(['machineID', pd.Grouper(key='datetime', freq='D')]).sum().reset_index()
         # telemetry_daily['pressure'] = telemetry_daily['pressure'] / 24
         # telemetry_daily['volt'] = telemetry_daily['volt'] / 24
         # telemetry_daily['vibration'] = telemetry_daily['vibration'] / 24
         # telemetry_daily['rotate'] = telemetry_daily['rotate'] / 24
 
+        # # Drop any rows with missing values
         # telemetry_daily = telemetry_daily.dropna()
 
-        # # print(telemetry_daily.shape)
-        # # print(telemetry_daily.head())
-        # df5['failure']= df5['failure'].replace('comp1',1)
-        # df5['failure']= df5['failure'].replace('comp2',1)
-        # df5['failure']= df5['failure'].replace('comp3',1)
-        # df5['failure']= df5['failure'].replace('comp4',1)
+        # # Display shape and head of the DataFrame using Streamlit
+        # # st.write("Shape of dataset after resampling:", telemetry_daily.shape)
+        # # st.write("First Few Rows:")
+        # # st.write(telemetry_daily.head())
 
-        # df5['failure']=df5['failure'].astype(str)
-        # # print(df5['failure'])
+        # # Replace failure types with binary values
+        # df5['failure'] = df5['failure'].replace(['comp1', 'comp2', 'comp3', 'comp4'], 1)
+
+        # # Convert failure column to string type
+        # df5['failure'] = df5['failure'].astype(str)
+
+        # # # Print the failure column
+        # # st.write(df5['failure'])
+
+        # # Convert datetime column to datetime type and set it as the index
+        # df5['datetime'] = pd.to_datetime(df5['datetime'])
+        # df5.set_index('datetime', inplace=True)
+
+        # # Group by machineID and daily frequency, and calculate the daily sums
+        # df5 = df5.groupby(['machineID', pd.Grouper(freq='D')]).sum()
+        # df5 = df5.reset_index()
+
+        # # Normalize the datetime column
+        # df5['datetime'] = df5['datetime'].dt.normalize()
+
+        # # # Display the head of the DataFrame
+        # # st.write(df5.head())
 
         # merged_df = pd.merge(telemetry_daily, df5, on=['machineID', 'datetime'], how='left')
 
-        # # Display the merged DataFrame
-        # st.write("Merged DataFrame:")
-        # st.dataframe(merged_df)
+        # # st.write("Shape of dataset after merging: ", merged_df.shape)
+        # # st.write(merged_df.shape)
+        # # st.write(merged_df.head())
+        # merged_df['failure'] = merged_df['failure'].astype(str)
+        # merged_df['failure'] = merged_df['failure'].replace(['comp1', 'comp2', 'comp3', 'comp4',
+        #                                                     'comp2comp4', 'comp2comp3', 'comp1comp2',
+        #                                                     'comp1comp4', 'comp1comp3', 'comp3comp4',
+        #                                                     '1', '11'], 1)
+        # merged_df['failure'] = merged_df['failure'].replace('nan',0)
 
-        # # merged_df = pd.merge(telemetry_daily, df5, on=['machineID', 'datetime'], how='left')
-
-        # # print(merged_df.shape)
-        # # print(merged_df.head())
-
-        # merged_df['failure']=merged_df['failure'].astype(str)
-        # # print(merged_df['failure'])
-
-        # merged_df['failure']= merged_df['failure'].replace('comp1',1)
-        # merged_df['failure']= merged_df['failure'].replace('comp2',1)
-        # merged_df['failure']= merged_df['failure'].replace('comp3',1)
-        # merged_df['failure']= merged_df['failure'].replace('comp4',1)
-        # merged_df['failure']= merged_df['failure'].replace('comp2comp4',1)
-        # merged_df['failure']= merged_df['failure'].replace('comp2comp3',1)
-        # merged_df['failure']= merged_df['failure'].replace('comp1comp2',1)
-        # merged_df['failure']= merged_df['failure'].replace('comp1comp4',1)
-        # merged_df['failure']= merged_df['failure'].replace('comp1comp3',1)
-        # merged_df['failure']= merged_df['failure'].replace('comp3comp4',1)
-        # merged_df['failure']= merged_df['failure'].replace('1',1)
-        # merged_df['failure']= merged_df['failure'].replace('nan',0)
-        # merged_df['failure']= merged_df['failure'].replace('11',1)
-
-        # # merged_df['datetime']=merged_df['datetime'].astype(str)
-        # # print(merged_df)
-        # merged_df['datetime']= pd.to_datetime(merged_df['datetime'])
-        # merged_df.set_index('datetime', inplace=True)
-
-        st.title("FAILURE PREDICTION")
-        df = pd.read_csv("Datasets/PdM_telemetry.csv")
-        df5= pd.read_csv("Datasets/PdM_failures.csv")
-        df['datetime'] = pd.to_datetime(df['datetime'])
-
-        # Group by machineID and daily frequency, and calculate the daily averages
-        telemetry_daily = df.groupby(['machineID', pd.Grouper(key='datetime', freq='D')]).sum().reset_index()
-        telemetry_daily['pressure'] = telemetry_daily['pressure'] / 24
-        telemetry_daily['volt'] = telemetry_daily['volt'] / 24
-        telemetry_daily['vibration'] = telemetry_daily['vibration'] / 24
-        telemetry_daily['rotate'] = telemetry_daily['rotate'] / 24
-
-        # Drop any rows with missing values
-        telemetry_daily = telemetry_daily.dropna()
-
-        # Display shape and head of the DataFrame using Streamlit
-        # st.write("Shape of dataset after resampling:", telemetry_daily.shape)
-        # st.write("First Few Rows:")
-        # st.write(telemetry_daily.head())
-
-        # Replace failure types with binary values
-        df5['failure'] = df5['failure'].replace(['comp1', 'comp2', 'comp3', 'comp4'], 1)
-
-        # Convert failure column to string type
-        df5['failure'] = df5['failure'].astype(str)
-
-        # # Print the failure column
-        # st.write(df5['failure'])
-
-        # Convert datetime column to datetime type and set it as the index
-        df5['datetime'] = pd.to_datetime(df5['datetime'])
-        df5.set_index('datetime', inplace=True)
-
-        # Group by machineID and daily frequency, and calculate the daily sums
-        df5 = df5.groupby(['machineID', pd.Grouper(freq='D')]).sum()
-        df5 = df5.reset_index()
-
-        # Normalize the datetime column
-        df5['datetime'] = df5['datetime'].dt.normalize()
-
-        # # Display the head of the DataFrame
-        # st.write(df5.head())
-
-        merged_df = pd.merge(telemetry_daily, df5, on=['machineID', 'datetime'], how='left')
-
-        # st.write("Shape of dataset after merging: ", merged_df.shape)
-        # st.write(merged_df.shape)
-        # st.write(merged_df.head())
-        merged_df['failure'] = merged_df['failure'].astype(str)
-        merged_df['failure'] = merged_df['failure'].replace(['comp1', 'comp2', 'comp3', 'comp4',
-                                                            'comp2comp4', 'comp2comp3', 'comp1comp2',
-                                                            'comp1comp4', 'comp1comp3', 'comp3comp4',
-                                                            '1', '11'], 1)
-        merged_df['failure'] = merged_df['failure'].replace('nan',0)
-
-        # Display the failure column
-        # st.write("Failure column:")
-        # st.write(merged_df)
-        # st.divider()
+        # # Display the failure column
+        # # st.write("Failure column:")
+        # # st.write(merged_df)
+        # # st.divider()
 
 
-        X = merged_df[['pressure', 'vibration', 'rotate', 'volt']]
-        y = merged_df['failure']
+        # X = merged_df[['pressure', 'vibration', 'rotate', 'volt']]
+        # y = merged_df['failure']
 
-        # model = CatBoostClassifier()
-        # model.fit(X, y)
+        # # model = CatBoostClassifier()
+        # # model.fit(X, y)
 
-        failed_records = merged_df[merged_df['failure'] == 1]
+        # failed_records = merged_df[merged_df['failure'] == 1]
 
-        failed_pressure = failed_records['pressure'].values
-        failed_vibration = failed_records['vibration'].values
-        failed_rotation = failed_records['rotate'].values
-        failed_voltage = failed_records['volt'].values
+        # failed_pressure = failed_records['pressure'].values
+        # failed_vibration = failed_records['vibration'].values
+        # failed_rotation = failed_records['rotate'].values
+        # failed_voltage = failed_records['volt'].values
 
-        # st.write("Values of attributes for failed machines:")
-        # for i in range(len(failed_pressure)):
-        #     st.write(f"Record {i+1}:")
-        #     st.write(f"Pressure: {failed_pressure[i]}")
-        #     st.write(f"Vibration: {failed_vibration[i]}")
-        #     st.write(f"Rotation: {failed_rotation[i]}")
-        #     st.write(f"Voltage: {failed_voltage[i]}")
-        #     st.write("----------------------")
+        # # st.write("Values of attributes for failed machines:")
+        # # for i in range(len(failed_pressure)):
+        # #     st.write(f"Record {i+1}:")
+        # #     st.write(f"Pressure: {failed_pressure[i]}")
+        # #     st.write(f"Vibration: {failed_vibration[i]}")
+        # #     st.write(f"Rotation: {failed_rotation[i]}")
+        # #     st.write(f"Voltage: {failed_voltage[i]}")
+        # #     st.write("----------------------")
 
-        no_failure_df = merged_df[merged_df['failure'] == 0]
+        # no_failure_df = merged_df[merged_df['failure'] == 0]
 
-        pressure_min = no_failure_df['pressure'].min()
-        pressure_max = no_failure_df['pressure'].max()
+        # pressure_min = no_failure_df['pressure'].min()
+        # pressure_max = no_failure_df['pressure'].max()
 
-        volt_min = no_failure_df['volt'].min()
-        volt_max = no_failure_df['volt'].max()
+        # volt_min = no_failure_df['volt'].min()
+        # volt_max = no_failure_df['volt'].max()
 
-        rotate_min = no_failure_df['rotate'].min()
-        rotate_max = no_failure_df['rotate'].max()
+        # rotate_min = no_failure_df['rotate'].min()
+        # rotate_max = no_failure_df['rotate'].max()
 
-        vibration_min = no_failure_df['vibration'].min()
-        vibration_max = no_failure_df['vibration'].max()
+        # vibration_min = no_failure_df['vibration'].min()
+        # vibration_max = no_failure_df['vibration'].max()
 
-        # st.write("Range of Non-Failure Attributes:")
-        # st.write(f"Pressure: {pressure_min} - {pressure_max}")
-        # st.write(f"Voltage: {volt_min} - {volt_max}")
-        # st.write(f"Rotation: {rotate_min} - {rotate_max}")
-        # st.write(f"Vibration: {vibration_min} - {vibration_max}")
+        # # st.write("Range of Non-Failure Attributes:")
+        # # st.write(f"Pressure: {pressure_min} - {pressure_max}")
+        # # st.write(f"Voltage: {volt_min} - {volt_max}")
+        # # st.write(f"Rotation: {rotate_min} - {rotate_max}")
+        # # st.write(f"Vibration: {vibration_min} - {vibration_max}")
 
-        pressure = st.number_input("Enter the pressure value:")
-        volt = st.number_input("Enter the voltage value:")
-        rotation = st.number_input("Enter the rotation value:")
-        vibration = st.number_input("Enter the vibration value:")
-        submit_button = st.button("Submit")
-        if submit_button:
-            if (
+        # pressure = st.number_input("Enter the pressure value:")
+        # volt = st.number_input("Enter the voltage value:")
+        # rotation = st.number_input("Enter the rotation value:")
+        # vibration = st.number_input("Enter the vibration value:")
+        # submit_button = st.button("Submit")
+        # if submit_button:
+        #     if (
 
-                ((failed_records['pressure'] == pressure) & (failed_records['vibration'] == vibration) &
+        #         ((failed_records['pressure'] == pressure) & (failed_records['vibration'] == vibration) &
 
-                (failed_records['rotate'] == rotation) & (failed_records['volt'] == volt)).any() or
+        #         (failed_records['rotate'] == rotation) & (failed_records['volt'] == volt)).any() or
 
-                pressure < pressure_min or pressure > pressure_max or
+        #         pressure < pressure_min or pressure > pressure_max or
 
-                vibration < vibration_min or vibration > vibration_max or
+        #         vibration < vibration_min or vibration > vibration_max or
 
-                rotation < rotate_min or rotation > rotate_max or
+        #         rotation < rotate_min or rotation > rotate_max or
 
-                volt < volt_min or volt > volt_max
+        #         volt < volt_min or volt > volt_max
 
-            ):
+        #     ):
 
-                st.subheader("The machine is predicted to fail.")
+        #         st.subheader("The machine is predicted to fail.")
 
-            else:
+        #     else:
 
-                st.subheader("The machine is predicted to not fail.")
+        #         st.subheader("The machine is predicted to not fail.")
 
     if __name__ == "__main__":
         main()
