@@ -1509,8 +1509,8 @@ def page5():
 
         #         st.subheader("The machine is predicted to not fail.")
 
-    if __name__ == "__main__":
-        main()
+    # if __name__ == "__main__":
+    #     main()
             
 
 
