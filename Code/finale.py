@@ -1318,10 +1318,10 @@ def page4():
     if __name__ == "__main__":
         main()
 
-# def page5():
-#     def main():
-        # # st.title("")
-        # # st.title("FAILURE PREDICTION")
+def page5():
+    def main():
+        st.title("")
+        st.title("FAILURE PREDICTION")
         # # df = pd.read_csv("Datasets/PdM_telemetry.csv")
         # # df5= pd.read_csv("Datasets/PdM_failures.csv")
         # # # df1= pd.read_csv("Datasets/PdM_machines.csv")
@@ -1509,8 +1509,8 @@ def page4():
 
         #         st.subheader("The machine is predicted to not fail.")
 
-    # if __name__ == "__main__":
-    #     main()
+    if __name__ == "__main__":
+        main()
             
 # Create a dictionary to map page names to their corresponding functions
 pages = {
