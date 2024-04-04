@@ -1319,7 +1319,7 @@ def page4():
         main()
 
 def page5():
-    def main():
+    # def main():
         # st.title("")
         # st.title("FAILURE PREDICTION")
         # df = pd.read_csv("Datasets/PdM_telemetry.csv")
