@@ -451,19 +451,19 @@ def page1():
         # st.pyplot()
         
        
-        st.subheader("KPSS statistics")
-        attribute_columns = ['pressure', 'rotate', 'vibration', 'volt']
-        results = []
-        for column in attribute_columns:
-            data = telemetry_daily[column]
-            result = kpss(data)
-            kpss_statistic = result[0]
-            p_value = result[1]
-            results.append({'Attribute': column, 'KPSS Statistic': kpss_statistic, 'p-value': p_value})
+        # st.subheader("KPSS statistics")
+        # attribute_columns = ['pressure', 'rotate', 'vibration', 'volt']
+        # results = []
+        # for column in attribute_columns:
+        #     data = telemetry_daily[column]
+        #     result = kpss(data)
+        #     kpss_statistic = result[0]
+        #     p_value = result[1]
+        #     results.append({'Attribute': column, 'KPSS Statistic': kpss_statistic, 'p-value': p_value})
 
-        results_df = pd.DataFrame(results)
-        st.table(results_df)
-        st.divider()
+        # results_df = pd.DataFrame(results)
+        # st.table(results_df)
+        # st.divider()
 
         # Stepwise fit summary for ARIMA model 
 
@@ -478,20 +478,20 @@ def page1():
         #     st.header(f"ARIMA model for '{column}':")
         #     st.write(model.summary())
 
-        st.subheader("Summary of ARIMA model")
-        # Create a sample data for the table
-        data = {
-            'Attribute': ['Pressure', 'Rotation', 'Vibration', 'Voltage'],
-            'ARIMA Model': ['SARIMAX(0, 0, 3)', 'SARIMAX(0, 0, 2)', 'SARIMAX(0, 0, 2)', 'SARIMAX(0, 0, 1)']
-        }
+        # st.subheader("Summary of ARIMA model")
+        # # Create a sample data for the table
+        # data = {
+        #     'Attribute': ['Pressure', 'Rotation', 'Vibration', 'Voltage'],
+        #     'ARIMA Model': ['SARIMAX(0, 0, 3)', 'SARIMAX(0, 0, 2)', 'SARIMAX(0, 0, 2)', 'SARIMAX(0, 0, 1)']
+        # }
 
-        df = pd.DataFrame(data)
+        # df = pd.DataFrame(data)
 
-        # Display the table in a 2-column, 5-rows format
-        st.table(df.style.set_properties(**{'text-align': 'center'}).set_table_styles([{
-            'selector': 'th',
-            'props': [('text-align', 'center')]
-        }]))
+        # # Display the table in a 2-column, 5-rows format
+        # st.table(df.style.set_properties(**{'text-align': 'center'}).set_table_styles([{
+        #     'selector': 'th',
+        #     'props': [('text-align', 'center')]
+        # }]))
 
     if __name__ == "__main__":
         main()
