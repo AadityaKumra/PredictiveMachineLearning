@@ -478,20 +478,20 @@ def page1():
         #     st.header(f"ARIMA model for '{column}':")
         #     st.write(model.summary())
 
-        # st.subheader("Summary of ARIMA model")
-        # # Create a sample data for the table
-        # data = {
-        #     'Attribute': ['Pressure', 'Rotation', 'Vibration', 'Voltage'],
-        #     'ARIMA Model': ['SARIMAX(0, 0, 3)', 'SARIMAX(0, 0, 2)', 'SARIMAX(0, 0, 2)', 'SARIMAX(0, 0, 1)']
-        # }
+        st.subheader("Summary of ARIMA model")
+        # Create a sample data for the table
+        data = {
+            'Attribute': ['Pressure', 'Rotation', 'Vibration', 'Voltage'],
+            'ARIMA Model': ['SARIMAX(0, 0, 3)', 'SARIMAX(0, 0, 2)', 'SARIMAX(0, 0, 2)', 'SARIMAX(0, 0, 1)']
+        }
 
-        # df = pd.DataFrame(data)
+        df = pd.DataFrame(data)
 
-        # # Display the table in a 2-column, 5-rows format
-        # st.table(df.style.set_properties(**{'text-align': 'center'}).set_table_styles([{
-        #     'selector': 'th',
-        #     'props': [('text-align', 'center')]
-        # }]))
+        # Display the table in a 2-column, 5-rows format
+        st.table(df.style.set_properties(**{'text-align': 'center'}).set_table_styles([{
+            'selector': 'th',
+            'props': [('text-align', 'center')]
+        }]))
 
     if __name__ == "__main__":
         main()
