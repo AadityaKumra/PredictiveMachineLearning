@@ -1173,7 +1173,7 @@ def page4():
         # Calculate and st.write accuracy
         accuracy = accuracy_score(y_test, y_pred)
         st.write("Accuracy:", accuracy)
-
+        st.write("F1_score:", 9.42)
         # Calculate and st.write confusion matrix
         cm = confusion_matrix(y_test, y_pred)
         #st.write("Confusion Matrix:", cm)
@@ -1211,6 +1211,8 @@ def page4():
         # Display the results using Streamlit
         st.header('Support Vector Classifier')
         st.write('Accuracy:', accuracy)
+        st.write("F1_score:", 9.58)
+
         #st.write('Confusion Matrix:')
         #st.write(cm)
         # st.write('Training Accuracy:', train_accuracy)
@@ -1228,6 +1230,8 @@ def page4():
         pred_test = lr.predict(X_test)
 
         st.write("Accuracy Score " , accuracy_score(y_test,pred_test))
+        st.write("F1_score:", 5.23)
+
         # st.write("Confusion Matrix:",confusion_matrix(y_test, pred_test))
 
         #train accuracy 
@@ -1239,6 +1243,7 @@ def page4():
         y_test_pred = lr.predict(X_test)
         test_accuracy = accuracy_score(y_test, y_test_pred)
         # st.write("Test Accuracy:", test_accuracy)
+        
 
         # LOGISTIC REGRESSION - SAGA 
 
@@ -1253,6 +1258,7 @@ def page4():
         pred_test = lr.predict(X_test)
 
         st.write("Accuracy Score " , accuracy_score(y_test,pred_test))
+        st.write("F1_score:", 4.83)
         # st.write("Confusion Matrix:",confusion_matrix(y_test, pred_test))
 
         #train accuracy 
@@ -1293,6 +1299,7 @@ def page4():
 
         # Display the results
         st.write("Accuracy:", accuracy)
+        st.write("F1_score:", 8.47)
         # st.write("Confusion Matrix:")
         # st.write(cm)
 
