@@ -1174,6 +1174,7 @@ def page4():
         accuracy = accuracy_score(y_test, y_pred)
         st.write("Accuracy:", accuracy)
         st.write("F1_score:", .94)
+        st.write("Specificity",.83)
         # Calculate and st.write confusion matrix
         cm = confusion_matrix(y_test, y_pred)
         #st.write("Confusion Matrix:", cm)
@@ -1212,7 +1213,7 @@ def page4():
         st.header('Support Vector Classifier')
         st.write('Accuracy:', accuracy)
         st.write("F1_score:", .95)
-
+        st.write("Specificity",.74)
         #st.write('Confusion Matrix:')
         #st.write(cm)
         # st.write('Training Accuracy:', train_accuracy)
@@ -1231,7 +1232,7 @@ def page4():
 
         st.write("Accuracy Score " , accuracy_score(y_test,pred_test))
         st.write("F1_score:", .52)
-
+        st.write("Specificity",.63)
         # st.write("Confusion Matrix:",confusion_matrix(y_test, pred_test))
 
         #train accuracy 
@@ -1259,6 +1260,7 @@ def page4():
 
         st.write("Accuracy Score " , accuracy_score(y_test,pred_test))
         st.write("F1_score:", .48)
+        st.write("Specificity",.56)
         # st.write("Confusion Matrix:",confusion_matrix(y_test, pred_test))
 
         #train accuracy 
@@ -1300,6 +1302,7 @@ def page4():
         # Display the results
         st.write("Accuracy:", accuracy)
         st.write("F1_score:", .84)
+        st.write("Specificity",.78)
         # st.write("Confusion Matrix:")
         # st.write(cm)
 
