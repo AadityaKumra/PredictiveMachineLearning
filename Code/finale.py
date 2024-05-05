@@ -1491,9 +1491,10 @@ def page5():
         # st.write(f"Rotation: {rotate_min} - {rotate_max}")
         # st.write(f"Vibration: {vibration_min} - {vibration_max}")
 
-        pressure = st.number_input("Enter the pressure value:")
+       
         volt = st.number_input("Enter the voltage value:")
         rotation = st.number_input("Enter the rotation value:")
+        pressure = st.number_input("Enter the pressure value:")
         vibration = st.number_input("Enter the vibration value:")
         submit_button = st.button("Submit")
         if submit_button:
