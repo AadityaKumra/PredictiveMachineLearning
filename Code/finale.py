@@ -1388,7 +1388,7 @@ def page5():
         # merged_df['datetime']= pd.to_datetime(merged_df['datetime'])
         # merged_df.set_index('datetime', inplace=True)
 
-        st.title("FAILURE PREDICTION")
+        
         df = pd.read_csv("Datasets/PdM_telemetry.csv")
         df5= pd.read_csv("Datasets/PdM_failures.csv")
         df['datetime'] = pd.to_datetime(df['datetime'])
