@@ -8,7 +8,7 @@
    
  - Failure prediction using SVM, Random Forest, Logistic Regression, CATBOOST models with best accuracy of 98.07%.
    
- - Dynamically enter the input features (Pressure, Voltage, Rotation, Temperature) to test whether machine will fail or not.
+ - Dynamically enter the input features (Pressure, Voltage, Rotation, Temperature) to test whether the machine will fail or not.
 
 ![image](https://github.com/AadityaKumra/PredictiveMaintenance/assets/72290209/540b6803-afd7-4da4-b4c9-8b1204bdff4f)
 ![image](https://github.com/AadityaKumra/PredictiveMaintenance/assets/72290209/da60abf4-cd0f-4e71-a559-9d69a6d93aac)
