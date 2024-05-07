@@ -1173,8 +1173,8 @@ def page4():
         # Calculate and st.write accuracy
         accuracy = accuracy_score(y_test, y_pred)
         st.write("Accuracy:", accuracy)
-        st.write("F1_score:", .94)
-        st.write("Specificity",.83)
+        # st.write("F1_score:", .94)
+        # st.write("Specificity",.83)
         # Calculate and st.write confusion matrix
         cm = confusion_matrix(y_test, y_pred)
         #st.write("Confusion Matrix:", cm)
@@ -1212,8 +1212,8 @@ def page4():
         # Display the results using Streamlit
         st.header('Support Vector Classifier')
         st.write('Accuracy:', accuracy)
-        st.write("F1_score:", .95)
-        st.write("Specificity",.74)
+        # st.write("F1_score:", .95)
+        # st.write("Specificity",.74)
         #st.write('Confusion Matrix:')
         #st.write(cm)
         # st.write('Training Accuracy:', train_accuracy)
@@ -1231,8 +1231,8 @@ def page4():
         pred_test = lr.predict(X_test)
 
         st.write("Accuracy Score " , accuracy_score(y_test,pred_test))
-        st.write("F1_score:", .52)
-        st.write("Specificity",.63)
+        # st.write("F1_score:", .52)
+        # st.write("Specificity",.63)
         # st.write("Confusion Matrix:",confusion_matrix(y_test, pred_test))
 
         #train accuracy 
@@ -1259,8 +1259,8 @@ def page4():
         pred_test = lr.predict(X_test)
 
         st.write("Accuracy Score " , accuracy_score(y_test,pred_test))
-        st.write("F1_score:", .48)
-        st.write("Specificity",.56)
+        # st.write("F1_score:", .48)
+        # st.write("Specificity",.56)
         # st.write("Confusion Matrix:",confusion_matrix(y_test, pred_test))
 
         #train accuracy 
@@ -1274,35 +1274,35 @@ def page4():
         # st.write("Test Accuracy:", test_accuracy)
 
         # #CATBOOST
-        st.divider()
-        st.header("CatBoost Classifier")
-        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.5)
+        # st.divider()
+        # st.header("CatBoost Classifier")
+        # X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.5)
 
-        class_counts = y_train.value_counts()
-        class_weights = class_counts.sum() / (len(class_counts) * class_counts)
+        # class_counts = y_train.value_counts()
+        # class_weights = class_counts.sum() / (len(class_counts) * class_counts)
 
-        # Create a CatBoost classifier
-        catboost_model = cb.CatBoostClassifier(iterations=100,
-                                            random_state=42,
-                                            eval_metric='Accuracy',
-                                            task_type='CPU',
-                                            verbose=50,
-                                            class_weights=class_weights)
+        # # Create a CatBoost classifier
+        # catboost_model = cb.CatBoostClassifier(iterations=100,
+        #                                     random_state=42,
+        #                                     eval_metric='Accuracy',
+        #                                     task_type='CPU',
+        #                                     verbose=50,
+        #                                     class_weights=class_weights)
 
-        catboost_model.fit(X_train, y_train, eval_set=(X_test, y_test), early_stopping_rounds=50)
-        y_pred = catboost_model.predict(X_test)
-        pred_test = catboost_model.predict(X_test)
+        # catboost_model.fit(X_train, y_train, eval_set=(X_test, y_test), early_stopping_rounds=50)
+        # y_pred = catboost_model.predict(X_test)
+        # pred_test = catboost_model.predict(X_test)
 
-        # Calculate accuracy
-        accuracy = accuracy_score(y_test, pred_test)
+        # # Calculate accuracy
+        # accuracy = accuracy_score(y_test, pred_test)
 
-        # Calculate confusion matrix
-        cm = confusion_matrix(y_test, y_pred)
+        # # Calculate confusion matrix
+        # cm = confusion_matrix(y_test, y_pred)
 
-        # Display the results
-        st.write("Accuracy:", accuracy)
-        st.write("F1_score:", .84)
-        st.write("Specificity",.78)
+        # # Display the results
+        # st.write("Accuracy:", accuracy)
+        # st.write("F1_score:", .84)
+        # st.write("Specificity",.78)
         # st.write("Confusion Matrix:")
         # st.write(cm)
 
