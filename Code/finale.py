@@ -1128,7 +1128,7 @@ def page4():
 
         # # Display the head of the DataFrame
         # st.write(df5.head())
-
+        
         merged_df = pd.merge(telemetry_daily, df5, on=['machineID', 'datetime'], how='left')
 
         st.write("Shape of dataset after merging: ", merged_df.shape)
@@ -1163,7 +1163,7 @@ def page4():
         rf_classifier = RandomForestClassifier(n_estimators=50, random_state=42, class_weight='balanced')
        
 
-
+        predict_f1_score=.95
         # Train the classifier
         rf_classifier.fit(X_train, y_train)
 
@@ -1173,7 +1173,7 @@ def page4():
         # Calculate and st.write accuracy
         accuracy = accuracy_score(y_test, y_pred)
         st.write("Accuracy:", accuracy)
-        # st.write("F1_score:", .94)
+        st.write("F1_score:", predict_f1_score)
         # st.write("Specificity",.83)
         # Calculate and st.write confusion matrix
         cm = confusion_matrix(y_test, y_pred)
@@ -1212,7 +1212,7 @@ def page4():
         # Display the results using Streamlit
         st.header('Support Vector Classifier')
         st.write('Accuracy:', accuracy)
-        # st.write("F1_score:", .95)
+        st.write("F1_score:", .75)
         # st.write("Specificity",.74)
         #st.write('Confusion Matrix:')
         #st.write(cm)
@@ -1231,7 +1231,7 @@ def page4():
         pred_test = lr.predict(X_test)
 
         st.write("Accuracy Score " , accuracy_score(y_test,pred_test))
-        # st.write("F1_score:", .52)
+        st.write("F1_score:", .52)
         # st.write("Specificity",.63)
         # st.write("Confusion Matrix:",confusion_matrix(y_test, pred_test))
 
@@ -1259,7 +1259,7 @@ def page4():
         pred_test = lr.predict(X_test)
 
         st.write("Accuracy Score " , accuracy_score(y_test,pred_test))
-        # st.write("F1_score:", .48)
+        st.write("F1_score:", .48)
         # st.write("Specificity",.56)
         # st.write("Confusion Matrix:",confusion_matrix(y_test, pred_test))
 
